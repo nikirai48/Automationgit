@@ -1,0 +1,32 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "login check",
+    "line": 1,
+    "id": "login-check",
+    "tags": [],
+    "uri": "extra.feature",
+    "elements": [
+      {
+        "id": "login-check;user-is-able-to-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User is able to login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User successfully logins into the Admin and lands Response desk tab",
+            "result": {
+              "status": "passed",
+              "duration": 2079000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

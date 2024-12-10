@@ -1,0 +1,61 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "User login",
+    "line": 1,
+    "id": "user-login",
+    "tags": [],
+    "uri": "Topicslider.feature",
+    "elements": [
+      {
+        "id": "user-login;user-is-able-to-sliders",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User is able to Sliders",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User successfully logins into the Admin and lands Response desk tab",
+            "result": {
+              "status": "passed",
+              "duration": 6322000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Click on Topics sub tab",
+            "result": {
+              "status": "failed",
+              "duration": 7026000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: Expected to find element: `li.submenu__item`, but never found it.\n    at topic.topictab (cypress/e2e/PageObject/Topic.cy.js:18:33)\n    at Context.eval (cypress/e2e/Stepdefinitions/topicsteps.cy.js:16:7)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "Click on any Topic with items associated to it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "click on Timeline tab",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
