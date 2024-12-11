@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "User login",
+    "line": 1,
+    "id": "user-login",
+    "tags": [],
+    "uri": "login.feature",
+    "elements": [
+      {
+        "id": "user-login;user-logs-in-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User logs in with valid credentials",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I visit the login page",
+            "result": {
+              "status": "passed",
+              "duration": 842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 1080000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I land on the dashboard",
+            "result": {
+              "status": "passed",
+              "duration": 1508000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

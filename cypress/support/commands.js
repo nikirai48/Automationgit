@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// cypress/support/commands.js
+
+// cypress/support/commands.js
+
+Cypress.Commands.add("Credentials", () => {
+  const username = Cypress.env("username");
+  const password = Cypress.env("password");
+
+  cy.visit("https://prgloo-dev-admin-01.azurewebsites.net/login/");
+  cy.get("#username").type(username);
+  cy.get("#password").type(password);
+  cy.get("#btn-submit").click();
+});
+

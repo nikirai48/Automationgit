@@ -1,0 +1,73 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Publication Frequency Selection",
+    "line": 1,
+    "id": "publication-frequency-selection",
+    "tags": [],
+    "uri": "Firsttestcase.feature",
+    "elements": [
+      {
+        "id": "publication-frequency-selection;select-a-publication-frequency-from-the-dropdown",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Select a publication frequency from the dropdown",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I Click on Contacts tab",
+            "result": {
+              "status": "passed",
+              "duration": 7914000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I am on the Contacts sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 853000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I Click on Media contacts sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 6000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I Click on the filters icon",
+            "result": {
+              "status": "passed",
+              "duration": 475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I Click on Publication frequency dropdown",
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

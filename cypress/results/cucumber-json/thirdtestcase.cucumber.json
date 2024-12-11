@@ -1,0 +1,63 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Readonly",
+    "line": 1,
+    "id": "readonly",
+    "tags": [],
+    "uri": "thirdtestcase.feature",
+    "elements": [
+      {
+        "id": "readonly;unable-to-delete-topics-with-readonly-label",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Unable to delete topics with Readonly label",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Topics sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 9203000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Select a topic with Ready only label",
+            "result": {
+              "status": "passed",
+              "duration": 2340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Verfiy that a context menu is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 20000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Verify that a delete option is not displayed",
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

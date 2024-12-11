@@ -1,0 +1,31 @@
+name: Cypress Tests
+
+# Trigger the workflow when code is pushed or a pull request is made to the main branch
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the 'main' branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the 'main' branch
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest  # Runs the job on the latest Ubuntu version (you can also use macos-latest or windows-latest)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # This checks out your repository's code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Specify Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm install  # Install project dependencies, make sure Cypress is included in your package.json
+
+      - name: Run Cypress tests
+        run: |
+          npx cypress run  # Run Cypress tests (use npx to avoid having to install Cypress globally)
