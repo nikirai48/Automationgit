@@ -1,0 +1,29 @@
+name: Cypress Test Workflow
+
+on:
+  push:
+    branches:
+      - main  # This triggers the workflow on push to the `main` branch
+  pull_request:
+    branches:
+      - main  # This triggers the workflow on PR to `main`
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Run on Ubuntu (Linux) environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # This action checks out your repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # You can set any version of Node.js you need
+
+      - name: Install dependencies
+        run: npm install  # Install your project dependencies
+
+      - name: Run Cypress tests
+        run: npx cypress run  # Run Cypress tests
+
