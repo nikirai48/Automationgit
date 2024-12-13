@@ -1,5 +1,6 @@
 [
   {
+    "description": "Background :I am on the login page And I login with valid credentials",
     "keyword": "Feature",
     "name": "User login",
     "line": 1,
@@ -10,67 +11,39 @@
       {
         "id": "user-login;user-logs-in-with-valid-credentials",
         "keyword": "Scenario",
-        "line": 3,
+        "line": 5,
         "name": "User logs in with valid credentials",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I visit the login page",
-            "result": {
-              "status": "passed",
-              "duration": 6062000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 5,
-            "name": "I enter valid credentials",
-            "result": {
-              "status": "passed",
-              "duration": 1114000000
-            }
-          },
-          {
-            "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "I land on the dashboard",
+            "name": "I click response desk tab",
             "result": {
-              "status": "failed",
-              "duration": 7002000000,
-              "error_message": "AssertionError: Timed out retrying after 7000ms: expected 'https://prgloo-dev-admin-01.azurewebsites.net/login/' to include 'https://prgloo-dev-admin-01.azurewebsites.net/#!/'\n    at Context.eval (cypress/e2e/Stepdefinitions/loginsteps.cy.js:20:10)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+              "status": "passed",
+              "duration": 13047000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 7,
-            "name": "I click response desk tab",
+            "name": "I should land on Conversation sub tab",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 902000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 8,
-            "name": "I should land on Conversation sub tab",
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
             "name": "I click on all the sub tabs",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 2783000000
             }
           }
         ]
