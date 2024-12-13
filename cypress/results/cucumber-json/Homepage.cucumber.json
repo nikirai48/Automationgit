@@ -22,8 +22,9 @@
             "line": 6,
             "name": "I click response desk tab",
             "result": {
-              "status": "passed",
-              "duration": 13047000000
+              "status": "failed",
+              "duration": 13402000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: Expected to find element: `#module-responseDesk > .v4icon`, but never found it.\n    at Context.eval (cypress/e2e/Stepdefinitions/loginsteps.cy.js:6:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           },
           {
@@ -32,8 +33,7 @@
             "line": 7,
             "name": "I should land on Conversation sub tab",
             "result": {
-              "status": "passed",
-              "duration": 902000000
+              "status": "skipped"
             }
           },
           {
@@ -42,8 +42,7 @@
             "line": 8,
             "name": "I click on all the sub tabs",
             "result": {
-              "status": "passed",
-              "duration": 2783000000
+              "status": "skipped"
             }
           }
         ]
