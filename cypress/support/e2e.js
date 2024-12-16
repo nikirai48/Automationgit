@@ -24,4 +24,6 @@ import "cypress-xpath";
 
 beforeEach(() => {
   cy.Credentials();
+  cy.clearCookies();
+  cy.clearLocalStorage();
 });
