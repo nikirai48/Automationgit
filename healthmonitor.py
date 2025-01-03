@@ -22,7 +22,7 @@ def memory_usage():
     if memory_usage > memory_threshold:
         print(f"Alert! Memory usage is above {memory_threshold}%!")
     else:
-        print("Memory usage is within normal limits.")
+        print("Memory usage is ok.")
 
 def disk_usage():
     disk = psutil.disk_usage('/')
