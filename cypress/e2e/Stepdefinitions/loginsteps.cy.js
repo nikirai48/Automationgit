@@ -6,7 +6,6 @@ Then("I click response desk tab", () => {
   cy.get("#module-responseDesk > .v4icon").click();
 });
 
-
 Then("I click on all the sub tabs", () => {
   loginPage.navigatetotab();
 });

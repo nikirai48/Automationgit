@@ -1,5 +1,4 @@
 class LoginPage {
-  
   navigatetotab() {
     cy.get("li.submenu__item")
       .should("exist")

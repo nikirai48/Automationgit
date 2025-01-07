@@ -6,19 +6,14 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
       on("file:preprocessor", cucumber());
+      process.on("unhandledRejection", (err) => {
+        console.log("Unhandled promise rejection:", err);
+      });
     },
     specPattern: "cypress/e2e/Features/**/*.feature",
     viewportWidth: 1920,
     viewportHeight: 1080,
     defaultCommandTimeout: 7000,
     supportFile: "cypress/support/e2e.js",
-
-    env: {
-      username: "nikirai48@gmail.com",
-      password: "Cupandsaucer@11",
-    },
-    
   },
-  
 });
-

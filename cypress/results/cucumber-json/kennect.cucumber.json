@@ -1,0 +1,93 @@
+[
+  {
+    "description": "  Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Pathalogy Lab",
+    "line": 1,
+    "id": "pathalogy-lab",
+    "tags": [],
+    "uri": "kennect.feature",
+    "elements": [
+      {
+        "id": "pathalogy-lab;user-logs-in-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "User logs in with valid credentials",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Verify that after login User lands on the Homepage",
+            "result": {
+              "status": "passed",
+              "duration": 1408000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Verify that user can view a list of todos and access the Cost Calculator for blood tests.",
+            "result": {
+              "status": "passed",
+              "duration": 980000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Verify that the user can access cost calculator",
+            "result": {
+              "status": "passed",
+              "duration": 1016000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Verify that the user can click on Tests and click on Add Patients test",
+            "result": {
+              "status": "passed",
+              "duration": 812000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "Verify that the user can fill in Patients details",
+            "result": {
+              "status": "passed",
+              "duration": 4686000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Verify that the details can be added",
+            "result": {
+              "status": "passed",
+              "duration": 18185000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "Verify that after adding the test it is reflected on the page",
+            "result": {
+              "status": "passed",
+              "duration": 510000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
