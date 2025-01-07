@@ -1,0 +1,32 @@
+name: test run
+
+on:
+  push:
+    branches:
+      - master   # Trigger the workflow on push to the 'main' branch
+  pull_request:
+    branches:
+      - master   # Trigger on pull requests targeting the 'main' branch
+
+jobs:
+  build:
+    runs-on: windows-latest  # Use an Ubuntu runner
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Set the version of Node.js
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: npm test
