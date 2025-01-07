@@ -1,33 +1,33 @@
-name: test run
+name: testrun
 
 # Trigger the workflow on push or pull request events
 on:
   push:
     branches:
-      - master   # Run on pushes to the 'main' branch
+      - master # Trigger when pushing to the 'main' branch
   pull_request:
     branches:
-      - master
+      - master # Trigger when creating a pull request that targets the 'main' branch
 
-  jobs:
+jobs:
   build:
-    runs-on: window-latest 
+    runs-on: ubuntu-latest # Use an Ubuntu runner for the job
 
- steps:
+    steps:
       # Step 1: Checkout the repository code
       - name: Checkout code
-        uses: actions/checkout@v2   # This action checks out your repository's code
+        uses: actions/checkout@v2 # This action checks out your repository's code
 
-      # Step 2: Set up Node.js (if you're working with a Node.js project)
+      # Step 2: Set up Node.js (if you're using Node.js)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Set the version of Node.js to use (adjust based on your needs)
+          node-version: "14" # Specify the version of Node.js to use (change if necessary)
 
-      # Step 3: Install dependencies (e.g., npm install)
+      # Step 3: Install dependencies (npm example)
       - name: Install dependencies
-        run: npm install   # If you're using npm, replace with 'yarn install' if you're using Yarn
+        run: npm install # Run `npm install` to install dependencies
 
-      # Step 4: Run tests
+      # Step 4: Run tests (npm example)
       - name: Run tests
-        run: npm test   
+        run: npm test # Run the tests using npm
