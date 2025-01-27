@@ -15,17 +15,12 @@ on:
         description: "Test User Password"
         required: true
         default: "Asuslaptop@11"
-      
-
-# Trigger the workflow on push or pull request events
-on:
   push:
     branches:
-      - master # Trigger when pushing to the 'main' branch
+      - master # Trigger when pushing to the 'master' branch
   pull_request:
     branches:
-      - master # Trigger when creating a pull request that targets the 'main' branch
-      
+      - master # Trigger when creating a pull request targeting the 'master' branch
 
 jobs:
   build:
@@ -51,15 +46,14 @@ jobs:
         run: npm test # Run the tests using npm
 
       - name: Merge Mochawesome reports
-        run: mochawesome-merge cypress/reports/*.json > cypress/reports/output.json  # Merge the generated JSON reports.
+        run: mochawesome-merge cypress/reports/*.json > cypress/reports/output.json # Merge the generated JSON reports.
 
       - name: Generate HTML report
-        run: mochawesome-report-generator cypress/reports/output.json  # Generate the HTML report from the JSON.
+        run: mochawesome-report-generator cypress/reports/output.json # Generate the HTML report from the JSON.
 
       - name: Upload Cypress reports to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3  # Use this action to push the report to GitHub Pages.
+        uses: peaceiris/actions-gh-pages@v3 # Use this action to push the report to GitHub Pages.
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication.
-          publish_dir: ./cypress/reports  # The directory where the report is generated.
-          publish_branch: gh-pages  # The branch where the report will be stored (this is used for GitHub Pages).
-  
+          personal_token: ${{ secrets.GITHUB_TOKEN }} # Use GitHub token for authentication.
+          publish_dir: ./cypress/reports # The directory where the report is generated.
+          publish_branch: gh-pages # The branch where the report will be stored (this is used for GitHub Pages).
