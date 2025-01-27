@@ -28,5 +28,6 @@ class tc4 {
       .contains("span", "v4icon--archive") // Look for the Archive icon in the <span> element
       .should("not.exist"); // Ensure that the Archive option does not exist in the DOM
   }
+  
 }
 export default new tc4();

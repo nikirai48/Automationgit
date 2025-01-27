@@ -21,12 +21,14 @@
     "cy:parallel": "cypress-parallel -s cy:chromeRun -t 3 -d 'cypress/e2e/Features/**/*.feature'"
   },
   "devDependencies": {
-    "cypress": "^13.15.2",
-    "cypress-cucumber-preprocessor": "^4.2.0",
+    "cucumber-html-reporter": "^7.2.0",
+    "cypress": "^13.17.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-xpath": "^2.0.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "multiple-cucumber-html-reporter": "^3.9.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
@@ -56,7 +58,6 @@
     "eslint-plugin-cypress": "^4.1.0",
     "eslint-plugin-import": "^2.31.0",
     "lambdatest-cypress-cli": "^3.0.33",
-    "multiple-cucumber-html-reporter": "^3.8.0",
     "prettier": "^3.4.2",
     "prettier-plugin-gherkin": "^3.1.0"
   }

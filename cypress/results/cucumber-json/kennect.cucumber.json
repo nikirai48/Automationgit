@@ -22,8 +22,9 @@
             "line": 6,
             "name": "Verify that after login User lands on the Homepage",
             "result": {
-              "status": "passed",
-              "duration": 1408000000
+              "status": "failed",
+              "duration": 12320000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: expected 'https://prgloo-dev-admin-01.azurewebsites.net/#!/' to equal 'https://gor-pathology.web.app/dashboard'\n    + expected - actual\n\n    -'https://prgloo-dev-admin-01.azurewebsites.net/#!/'\n    +'https://gor-pathology.web.app/dashboard'\n\n    at dashboardpage.login (cypress/e2e/PageObject/GOR.cy.js:3:13)\n    at Context.eval (cypress/e2e/Stepdefinitions/Pathology.cy.js:5:16)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           },
           {
@@ -32,8 +33,7 @@
             "line": 7,
             "name": "Verify that user can view a list of todos and access the Cost Calculator for blood tests.",
             "result": {
-              "status": "passed",
-              "duration": 980000000
+              "status": "skipped"
             }
           },
           {
@@ -42,8 +42,7 @@
             "line": 8,
             "name": "Verify that the user can access cost calculator",
             "result": {
-              "status": "passed",
-              "duration": 1016000000
+              "status": "skipped"
             }
           },
           {
@@ -52,8 +51,7 @@
             "line": 9,
             "name": "Verify that the user can click on Tests and click on Add Patients test",
             "result": {
-              "status": "passed",
-              "duration": 812000000
+              "status": "skipped"
             }
           },
           {
@@ -62,8 +60,7 @@
             "line": 10,
             "name": "Verify that the user can fill in Patients details",
             "result": {
-              "status": "passed",
-              "duration": 4686000000
+              "status": "skipped"
             }
           },
           {
@@ -72,8 +69,7 @@
             "line": 11,
             "name": "Verify that the details can be added",
             "result": {
-              "status": "passed",
-              "duration": 18185000000
+              "status": "skipped"
             }
           },
           {
@@ -82,8 +78,7 @@
             "line": 12,
             "name": "Verify that after adding the test it is reflected on the page",
             "result": {
-              "status": "passed",
-              "duration": 510000000
+              "status": "skipped"
             }
           }
         ]
