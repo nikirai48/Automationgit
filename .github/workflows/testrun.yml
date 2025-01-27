@@ -1,0 +1,65 @@
+name: testrun
+
+on:
+  workflow_dispatch:
+    inputs:
+      ApplicationURL:
+        description: "Application URL"
+        required: true
+        default: "https://prgloo-dev-admin-01.azurewebsites.net/login/"
+      UserName:
+        description: "Test User Name"
+        required: true
+        default: "nikirai48@gmail.com"
+      Password:
+        description: "Test User Password"
+        required: true
+        default: "Asuslaptop@11"
+      
+
+# Trigger the workflow on push or pull request events
+on:
+  push:
+    branches:
+      - master # Trigger when pushing to the 'main' branch
+  pull_request:
+    branches:
+      - master # Trigger when creating a pull request that targets the 'main' branch
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Use an Ubuntu runner for the job
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2 # This action checks out your repository's code
+
+      # Step 2: Set up Node.js (if you're using Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" # Specify the version of Node.js to use (change if necessary)
+
+      # Step 3: Install dependencies (npm example)
+      - name: Install dependencies
+        run: npm install # Run `npm install` to install dependencies
+
+      # Step 4: Run tests (npm example)
+      - name: Run tests
+        run: npm test # Run the tests using npm
+
+      - name: Merge Mochawesome reports
+        run: mochawesome-merge cypress/reports/*.json > cypress/reports/output.json  # Merge the generated JSON reports.
+
+      - name: Generate HTML report
+        run: mochawesome-report-generator cypress/reports/output.json  # Generate the HTML report from the JSON.
+
+      - name: Upload Cypress reports to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # Use this action to push the report to GitHub Pages.
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication.
+          publish_dir: ./cypress/reports  # The directory where the report is generated.
+          publish_branch: gh-pages  # The branch where the report will be stored (this is used for GitHub Pages).
+  

@@ -22,7 +22,7 @@
             "name": "User successfully logins into the Admin and lands Response desk tab",
             "result": {
               "status": "passed",
-              "duration": 6322000000
+              "duration": 4292000000
             }
           },
           {
@@ -32,8 +32,8 @@
             "name": "Click on Topics sub tab",
             "result": {
               "status": "failed",
-              "duration": 7026000000,
-              "error_message": "AssertionError: Timed out retrying after 7000ms: Expected to find element: `li.submenu__item`, but never found it.\n    at topic.topictab (cypress/e2e/PageObject/Topic.cy.js:18:33)\n    at Context.eval (cypress/e2e/Stepdefinitions/topicsteps.cy.js:16:7)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+              "duration": 7380000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: Expected to find element: `li.submenu__item`, but never found it.\n    at topic.topictab (cypress/e2e/PageObject/Topic.cy.js:19:7)\n    at Context.eval (cypress/e2e/Stepdefinitions/Readonly.cy.js:6:8)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           },
           {

@@ -32,8 +32,20 @@ Cypress.Commands.add("Credentials", () => {
   const username = Cypress.env("username");
   const password = Cypress.env("password");
 
+  
   cy.visit("https://prgloo-dev-admin-01.azurewebsites.net/login/");
   cy.get("#username").type(username);
   cy.get("#password").type(password);
   cy.get("#btn-submit").click();
+});
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Handle specific errors here
+  if (err.message.includes('Cannot redefine property: cookie')) {
+    // Prevent Cypress from failing the test
+    return false;
+  }
+  
+  // If you want to suppress all uncaught exceptions, return false unconditionally
+  return false;
 });

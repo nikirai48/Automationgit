@@ -1,0 +1,43 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Checking tab redirect",
+    "line": 1,
+    "id": "checking-tab-redirect",
+    "tags": [],
+    "uri": "newsroom.feature",
+    "elements": [
+      {
+        "id": "checking-tab-redirect;checking-tab-redirect",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Checking tab redirect",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Contenthub tab",
+            "result": {
+              "status": "passed",
+              "duration": 7294000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I click on Newsroom sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 3581000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

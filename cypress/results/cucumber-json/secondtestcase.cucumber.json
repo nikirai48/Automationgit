@@ -22,9 +22,8 @@
             "line": 6,
             "name": "Click on Themes sub tab",
             "result": {
-              "status": "failed",
-              "duration": 12420000000,
-              "error_message": "CypressError: Timed out retrying after 7050ms: `cy.click()` failed because this element is not visible:\n\n`<span class=\"submenu__item-text\" translate=\"\">Themes</span>`\n\nThis element `<span.submenu__item-text>` is not visible because its parent `<li#section-app.themes.submenu__item>` has CSS property: `visibility: hidden`\n\nFix this problem, or use `{force: true}` to disable error checking.\n    at runVisibilityCheck (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:144800:58)\n    at Object.isStrictlyVisible (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:144814:10)\n    at runAllChecks (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113118:26)\n    at retryActionability (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113186:16)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:4315:29)\nFrom previous event:\n    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:3486:19)\n    at Promise.attempt.Promise.try (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:4305:9)\n    at whenStable (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:143587:68)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:143528:14)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at tc2.themestab (cypress/e2e/PageObject/testcase2.cy.js:4:78)\n    at Context.eval (cypress/e2e/Stepdefinitions/themes.cy.js:6:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+              "status": "passed",
+              "duration": 11025000000
             }
           },
           {
@@ -33,7 +32,8 @@
             "line": 7,
             "name": "Click on the checkbox to select a Theme with no Associated topic it should delete and with associated topic it should Archive",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 2729000000
             }
           }
         ]

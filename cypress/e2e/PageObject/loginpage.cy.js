@@ -1,20 +1,4 @@
 class LoginPage {
-  visit() {
-    cy.visit("https://prgloo-dev-admin-01.azurewebsites.net/login/");
-  }
-
-  enterUsername(username) {
-    cy.get("#username").type(username);
-  }
-
-  enterPassword(password) {
-    cy.get("#password").type(password);
-  }
-
-  submitLogin() {
-    cy.get("#btn-submit").click();
-  }
-
   navigatetotab() {
     cy.get("li.submenu__item")
       .should("exist")

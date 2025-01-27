@@ -1,6 +1,6 @@
 class tc3 {
   topictab() {
-    cy.get("li.submenu__item")
+    cy.get("'li.submenu__item', { timeout: 10000 }")
       .should("exist")
       .contains("span", "Topics")
       .click();

@@ -1,0 +1,73 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Checking No of pages",
+    "line": 1,
+    "id": "checking-no-of-pages",
+    "tags": [],
+    "uri": "checkingpages.feature",
+    "elements": [
+      {
+        "id": "checking-no-of-pages;checking-no-of-pages",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Checking no of pages",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Statements sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 8772000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I check the no of pages",
+            "result": {
+              "status": "passed",
+              "duration": 875000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I check the number of rows and column",
+            "result": {
+              "status": "passed",
+              "duration": 86000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I read all the rows from first page",
+            "result": {
+              "status": "passed",
+              "duration": 1173000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I navigate to upto 5 pages",
+            "result": {
+              "status": "passed",
+              "duration": 814000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
