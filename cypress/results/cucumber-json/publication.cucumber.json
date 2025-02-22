@@ -1,0 +1,54 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Checking Publication frequency",
+    "line": 1,
+    "id": "checking-publication-frequency",
+    "tags": [],
+    "uri": "publication.feature",
+    "elements": [
+      {
+        "id": "checking-publication-frequency;checking-tab-redirect",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Checking tab redirect",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Contacts tab",
+            "result": {
+              "status": "passed",
+              "duration": 10422000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I click on filter",
+            "result": {
+              "status": "passed",
+              "duration": 2813000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "i search for organisation",
+            "result": {
+              "status": "failed",
+              "duration": 16620000000,
+              "error_message": "CypressError: Timed out retrying after 7050ms: `cy.click()` could not be issued because this element is currently animating:\n\n`<div class=\"ellipsis\">Radio L...</div>`\n\nYou can fix this problem by:\n  - Passing `{force: true}` which disables all error checking\n  - Passing `{waitForAnimations: false}` which disables waiting on animations\n  - Passing `{animationDistanceThreshold: 20}` which decreases the sensitivity\n    at ensureElIsNotAnimating (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:112883:66)\n    at ensureNotAnimating (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113156:3)\n    at runAllChecks (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113295:9)\n    at retryActionability (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113339:16)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise.attempt.Promise.try (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:4338:29)\nFrom previous event:\n    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:3509:19)\n    at Promise._then (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1262:17)\n    at Promise.then (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1155:17)\n    at next (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:144182:101)\n    at next (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:144147:16)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:144203:16)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1724:18)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:2415:25)\nFrom Your Spec Code:\n    at Publication.searchbased (cypress/e2e/PageObject/PF.cy.js:53:9)\n    at Context.eval (cypress/e2e/Stepdefinitions/publicationfrequency.cy.js:35:13)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

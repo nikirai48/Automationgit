@@ -1,0 +1,73 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "Checking file upload",
+    "line": 1,
+    "id": "checking-file-upload",
+    "tags": [],
+    "uri": "fileupload.feature",
+    "elements": [
+      {
+        "id": "checking-file-upload;checking-file-upload",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Checking file upload",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Contenthub sub tab",
+            "result": {
+              "status": "passed",
+              "duration": 8351000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "i mouseover over Contact",
+            "result": {
+              "status": "passed",
+              "duration": 809000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Click on Resource library",
+            "result": {
+              "status": "passed",
+              "duration": 715000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I click on new and select file",
+            "result": {
+              "status": "passed",
+              "duration": 2215000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "i upload the file",
+            "result": {
+              "status": "passed",
+              "duration": 702000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

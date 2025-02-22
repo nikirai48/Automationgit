@@ -11,3 +11,5 @@ When("Click on Contenthub tab", () => {
 Then("I click on Newsroom sub tab", () => {
 	newsroom.newstab()
 });
+
+

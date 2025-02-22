@@ -37,6 +37,10 @@ class LoginPage {
       .contains("span", "File Attachments")
       .click();
   }
+  title(){
+    cy.title().should('eq','PR Manager: Dashboard') //Dashboard page
+
+  }
 }
 
 export default LoginPage;

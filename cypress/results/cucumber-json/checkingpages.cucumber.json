@@ -23,7 +23,7 @@
             "name": "Click on Statements sub tab",
             "result": {
               "status": "passed",
-              "duration": 8772000000
+              "duration": 10557000000
             }
           },
           {
@@ -33,37 +33,37 @@
             "name": "I check the no of pages",
             "result": {
               "status": "passed",
-              "duration": 875000000
+              "duration": 1233000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 8,
-            "name": "I check the number of rows and column",
+            "name": "I navigate to upto 5 pages",
             "result": {
               "status": "passed",
-              "duration": 86000000
+              "duration": 3000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "I read all the rows from first page",
+            "name": "I check the number of rows and column",
             "result": {
               "status": "passed",
-              "duration": 1173000000
+              "duration": 135000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 10,
-            "name": "I navigate to upto 5 pages",
+            "name": "I read all the rows from first page",
             "result": {
               "status": "passed",
-              "duration": 814000000
+              "duration": 374000000
             }
           }
         ]

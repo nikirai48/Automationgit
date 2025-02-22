@@ -23,17 +23,27 @@
             "name": "I click response desk tab",
             "result": {
               "status": "passed",
-              "duration": 7857000000
+              "duration": 10529000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 7,
+            "name": "I verify the title of the page",
+            "result": {
+              "status": "failed",
+              "duration": 7082000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: expected 'PR Manager: Conversations' to equal 'PR Manager: Dashboard'\n    + expected - actual\n\n    -'PR Manager: Conversations'\n    +'PR Manager: Dashboard'\n\n    at LoginPage.title (cypress/e2e/PageObject/loginpage.cy.js:41:15)\n    at Context.eval (cypress/e2e/Stepdefinitions/loginsteps.cy.js:11:11)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
             "name": "I click on all the sub tabs",
             "result": {
-              "status": "passed",
-              "duration": 3297000000
+              "status": "skipped"
             }
           }
         ]
