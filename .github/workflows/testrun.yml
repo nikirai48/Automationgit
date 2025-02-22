@@ -26,4 +26,4 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run Cypress Feature Tests
-        run: npx cypress run --spec "cypress/e2e/Features/Login.feature"
+        run: npx cypress run --spec "cypress\e2e\Features\Lists.feature"
