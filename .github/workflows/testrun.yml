@@ -40,7 +40,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
-          npm install # Install all dependencies
+          npm install --legacy-peer-deps
           npm install lambdatest-cypress-cli --save-dev
 
       # Step 4: Set environment variables
