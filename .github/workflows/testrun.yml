@@ -29,20 +29,22 @@ jobs:
     steps:
       # Step 1: Checkout the repository code
       - name: Checkout code
-        uses: actions/checkout@v4.1.5 # This action checks out your repository's code
+        uses: actions/checkout@v4 # This action checks out your repository's code
 
-      # Step 2: Set up Node.js (if you're using Node.js)
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20" # Specify the version of Node.js to use (change if necessary)
+          node-version: "20" # Specify the version of Node.js to use
 
-      # Step 3: Install dependencies (npm example)
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install # Run `npm install` to install dependencies
-             npm install lambdatest-cypress-cli --save-dev
+        run: |
+          npm install # Install all dependencies
+          npm install lambdatest-cypress-cli --save-dev
 
-       - name: Set environment variables
+      # Step 4: Set environment variables
+      - name: Set environment variables
         env:
           APPLICATION_URL: ${{ github.event.inputs.ApplicationURL }}
           USERNAME: ${{ github.event.inputs.UserName }}
@@ -51,60 +53,65 @@ jobs:
           echo "APPLICATION_URL set to $APPLICATION_URL"
           echo "USERNAME set to $USERNAME"
           echo "PASSWORD set to $PASSWORD"
+
+      # Step 5: Update LambdaTest configuration
       - name: Update lambdatest-config.json
-
         run: |
+          jq --arg featureFileKey "specs" \
+             --arg featureFileValue "cypress/e2e/Features/$FEATURE_FILE.feature" \
+             --arg tagKey "tags" \
+             --arg tagValue "$TAGS" \
+             '.run_settings[$featureFileKey] = $featureFileValue | .run_settings[$tagKey] = $tagValue' \
+             lambdatest-config.json.tmp > tmp && mv tmp lambdatest-config.json    
 
-    jq --arg featureFileKey "specs" \
+      # Step 6: Run Cypress tests on LambdaTest
+      - name: Run Cypress tests on LambdaTest
+        run: npx lambdatest-cypress run --sync true
 
-       --arg featureFileValue "cypress/e2e/Features/$FEATURE_FILE.feature" \
+      # Step 7: Set dynamic environment variables for report (complete time)
+      - name: Set dynamic environment variables for report
+        run: echo "COMPLETION_TIME=$(date -u '+%B %d %Y, %I:%M %p %Z')" >> $GITHUB_ENV
 
-       --arg tagKey "tags" \
-
-       --arg tagValue "$TAGS" \
-
-       '.run_settings[$featureFileKey] = $featureFileValue | .run_settings[$tagKey] = $tagValue' \
-
-       lambdatest-config.json.tmp > tmp && mv tmp lambdatest-config.json    
-
-       - name: Run Cypress tests on LambdaTest
-         run: npx lambdatest-cypress run --sync true
-
-      - name: Set dynamic environment variables for report (complete time)
-        run: |
-        echo "COMPLETION_TIME=$(date -u '+%B %d %Y, %I:%M %p %Z')" >> $GITHUB_ENV
-
+      # Step 8: Generate Cucumber HTML Report
       - name: Generate Cucumber HTML Report
         run: |
-        echo "Generating Cucumber HTML Report..."
-        npm i --save-dev multiple-cucumber-html-reporter
-        node cucumber-html-report.js   
+          echo "Generating Cucumber HTML Report..."
+          npm i --save-dev multiple-cucumber-html-reporter
+          node cucumber-html-report.js   
 
+      # Step 9: Deploy Cucumber HTML Report to GitHub Pages
       - name: Deploy Cucumber HTML Report to GitHub Pages manually
         run: |
-        git config --global user.email "prasad.bodke@onclusive.com"
-        git config --global user.name "Prasad Bodke"
-        git fetch origin gh-pages
-        git checkout gh-pages
-        mkdir -p ./reports/cucumber-html-report
-        cp -r ./cypress/reports/cucumber-html-report/* ./reports/cucumber-html-report/
-        git add ./reports/cucumber-html-report
-        git commit -m "Added Cucumber HTML report"
-        git push origin gh-pages
+          git config --global user.email "prasad.bodke@onclusive.com"
+          git config --global user.name "Prasad Bodke"
+          git fetch origin gh-pages
+          git checkout gh-pages
+          mkdir -p ./reports/cucumber-html-report
+          cp -r ./cypress/reports/cucumber-html-report/* ./reports/cucumber-html-report/
+          git add ./reports/cucumber-html-report
+          git commit -m "Added Cucumber HTML report"
+          git push origin gh-pages
 
-      # Step 4: Run tests (npm example)
-      - name: Run tests
-        run: npm test # Run the tests using npm
+      # Step 10: Run Cypress Tests
+      - name: Run Cypress Tests
+        run: npm test
 
+      # Step 11: Install Mochawesome dependencies
+      - name: Install Mochawesome dependencies
+        run: npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+
+      # Step 12: Merge Mochawesome reports
       - name: Merge Mochawesome reports
-        run: mochawesome-merge cypress/reports/*.json > cypress/reports/output.json # Merge the generated JSON reports.
+        run: mochawesome-merge cypress/reports/*.json > cypress/reports/output.json
 
+      # Step 13: Generate HTML report
       - name: Generate HTML report
-        run: mochawesome-report-generator cypress/reports/output.json # Generate the HTML report from the JSON.
+        run: mochawesome-report-generator cypress/reports/output.json
 
+      # Step 14: Upload Cypress reports to GitHub Pages
       - name: Upload Cypress reports to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3 # Use this action to push the report to GitHub Pages.
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }} # Use GitHub token for authentication.
-          publish_dir: ./cypress/reports # The directory where the report is generated.
-          publish_branch: gh-pages # The branch where the report will be stored (this is used for GitHub Pages).
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports
+          publish_branch: gh-pages
