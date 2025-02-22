@@ -23,7 +23,7 @@
             "name": "Verify that after login User lands on the Homepage",
             "result": {
               "status": "failed",
-              "duration": 12320000000,
+              "duration": 13055000000,
               "error_message": "AssertionError: Timed out retrying after 7000ms: expected 'https://prgloo-dev-admin-01.azurewebsites.net/#!/' to equal 'https://gor-pathology.web.app/dashboard'\n    + expected - actual\n\n    -'https://prgloo-dev-admin-01.azurewebsites.net/#!/'\n    +'https://gor-pathology.web.app/dashboard'\n\n    at dashboardpage.login (cypress/e2e/PageObject/GOR.cy.js:3:13)\n    at Context.eval (cypress/e2e/Stepdefinitions/Pathology.cy.js:5:16)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           },

@@ -1,0 +1,53 @@
+[
+  {
+    "description": " Background :I am on the login page And I login with valid credentials",
+    "keyword": "Feature",
+    "name": "creating Lists",
+    "line": 1,
+    "id": "creating-lists",
+    "tags": [],
+    "uri": "Lists.feature",
+    "elements": [
+      {
+        "id": "creating-lists;creating-new-list",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "creating new list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on Contacts tab",
+            "result": {
+              "status": "passed",
+              "duration": 7263000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I click on lists tab",
+            "result": {
+              "status": "passed",
+              "duration": 2379000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I click on new list",
+            "result": {
+              "status": "passed",
+              "duration": 8681000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

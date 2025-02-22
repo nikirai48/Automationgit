@@ -7,10 +7,10 @@ const releaseVersion = process.env.RELEASE_VERSION || "1.2.3";
 const completionTime = process.env.COMPLETION_TIME || new Date().toUTCString();
 
 report.generate({
-  jsonDir: "./lambdatest-artifacts", // ** Path of .json file executed on LambdaTest **
-  // jsonDir: "./cypress/results/cucumber-json", // ** Path of .json file executed locally from terminal/cypress runner **
+  jsonDir: "./cypress/lambdatest-artifacts", // ** Path of .json file executed on LambdaTest **
+  jsonDir: "./cypress/results/cucumber-json", // ** Path of .json file executed locally from terminal/cypress runner **
   reportPath: "./cypress/reports/cucumber-html-report", // ** Path of reports to be generated **
-  // reportPath: "./cypress/reports/cucumber-html-report-test", // ** Path of reports to be generated - local test purpose **
+  reportPath: "./cypress/reports/cucumber-html-report-test", // ** Path of reports to be generated - local test purpose **
   saveCollectedJSON: true,
   displayDuration: true,
   displayReportTime: true,

@@ -23,7 +23,7 @@
             "name": "Click on Contenthub tab",
             "result": {
               "status": "passed",
-              "duration": 7294000000
+              "duration": 11509000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "I click on Newsroom sub tab",
             "result": {
               "status": "passed",
-              "duration": 3581000000
+              "duration": 7402000000
             }
           }
         ]

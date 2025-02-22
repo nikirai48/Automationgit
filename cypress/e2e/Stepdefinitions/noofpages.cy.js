@@ -9,6 +9,9 @@ Then("I check the no of pages", () => {
 	pages.number()
 });
 
+Then("I navigate to upto 5 pages", () => {
+	pages.navigatepage()
+});
 
 Then("I check the number of rows and column", () => {
 	pages.rowsnumber()
@@ -20,6 +23,4 @@ Then("I read all the rows from first page", () => {
 });
 
 
-Then("I navigate to upto 5 pages", () => {
-	pages.navigatepage()
-});
+

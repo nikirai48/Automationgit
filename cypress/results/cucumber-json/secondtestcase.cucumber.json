@@ -23,7 +23,7 @@
             "name": "Click on Themes sub tab",
             "result": {
               "status": "passed",
-              "duration": 11025000000
+              "duration": 9320000000
             }
           },
           {
@@ -32,8 +32,9 @@
             "line": 7,
             "name": "Click on the checkbox to select a Theme with no Associated topic it should delete and with associated topic it should Archive",
             "result": {
-              "status": "passed",
-              "duration": 2729000000
+              "status": "failed",
+              "duration": 7395000000,
+              "error_message": "AssertionError: Timed out retrying after 7000ms: Expected to find element: `.totals span`, but never found it.\n    at tc2.Checkbox1 (cypress/e2e/PageObject/testcase2.cy.js:9:7)\n    at Context.eval (cypress/e2e/Stepdefinitions/themes.cy.js:11:8)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           }
         ]

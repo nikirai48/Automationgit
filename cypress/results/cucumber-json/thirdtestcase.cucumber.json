@@ -23,7 +23,7 @@
             "name": "Click on Topics sub tab",
             "result": {
               "status": "passed",
-              "duration": 9567000000
+              "duration": 8636000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "Select a topic with Ready only label",
             "result": {
               "status": "passed",
-              "duration": 4584000000
+              "duration": 3125000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "Verfiy that a context menu is displayed",
             "result": {
               "status": "passed",
-              "duration": 29000000
+              "duration": 16000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "Verify that a delete option is not displayed",
             "result": {
               "status": "passed",
-              "duration": 8000000
+              "duration": 10000000
             }
           }
         ]

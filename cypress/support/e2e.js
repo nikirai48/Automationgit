@@ -21,6 +21,11 @@ import "./commands";
 import "./commands";
 import "cypress-cucumber-preprocessor/steps";
 import "cypress-xpath";
+import 'cypress-file-upload';
+import 'cypress-real-events/support';
+import 'cypress-mochawesome-reporter/register';
+
+
 
 beforeEach(() => {
   cy.Credentials();

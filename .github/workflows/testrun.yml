@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       ApplicationURL:
-        description: "Application URL"
+        description: "APPLICATION_URL"
         required: true
         default: "https://prgloo-dev-admin-01.azurewebsites.net/login/"
       UserName:
-        description: "Test User Name"
+        description: "USERNAME"
         required: true
         default: "nikirai48@gmail.com"
       Password:
-        description: "Test User Password"
+        description: "PASSWORD"
         required: true
         default: "Asuslaptop@11"
   push:
@@ -29,17 +29,68 @@ jobs:
     steps:
       # Step 1: Checkout the repository code
       - name: Checkout code
-        uses: actions/checkout@v2 # This action checks out your repository's code
+        uses: actions/checkout@v4.1.5 # This action checks out your repository's code
 
       # Step 2: Set up Node.js (if you're using Node.js)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Specify the version of Node.js to use (change if necessary)
+          node-version: "20" # Specify the version of Node.js to use (change if necessary)
 
       # Step 3: Install dependencies (npm example)
       - name: Install dependencies
         run: npm install # Run `npm install` to install dependencies
+             npm install lambdatest-cypress-cli --save-dev
+
+       - name: Set environment variables
+        env:
+          APPLICATION_URL: ${{ github.event.inputs.ApplicationURL }}
+          USERNAME: ${{ github.event.inputs.UserName }}
+          PASSWORD: ${{ github.event.inputs.Password }}
+        run: |
+          echo "APPLICATION_URL set to $APPLICATION_URL"
+          echo "USERNAME set to $USERNAME"
+          echo "PASSWORD set to $PASSWORD"
+      - name: Update lambdatest-config.json
+
+        run: |
+
+    jq --arg featureFileKey "specs" \
+
+       --arg featureFileValue "cypress/e2e/Features/$FEATURE_FILE.feature" \
+
+       --arg tagKey "tags" \
+
+       --arg tagValue "$TAGS" \
+
+       '.run_settings[$featureFileKey] = $featureFileValue | .run_settings[$tagKey] = $tagValue' \
+
+       lambdatest-config.json.tmp > tmp && mv tmp lambdatest-config.json    
+
+       - name: Run Cypress tests on LambdaTest
+         run: npx lambdatest-cypress run --sync true
+
+      - name: Set dynamic environment variables for report (complete time)
+        run: |
+        echo "COMPLETION_TIME=$(date -u '+%B %d %Y, %I:%M %p %Z')" >> $GITHUB_ENV
+
+      - name: Generate Cucumber HTML Report
+        run: |
+        echo "Generating Cucumber HTML Report..."
+        npm i --save-dev multiple-cucumber-html-reporter
+        node cucumber-html-report.js   
+
+      - name: Deploy Cucumber HTML Report to GitHub Pages manually
+        run: |
+        git config --global user.email "prasad.bodke@onclusive.com"
+        git config --global user.name "Prasad Bodke"
+        git fetch origin gh-pages
+        git checkout gh-pages
+        mkdir -p ./reports/cucumber-html-report
+        cp -r ./cypress/reports/cucumber-html-report/* ./reports/cucumber-html-report/
+        git add ./reports/cucumber-html-report
+        git commit -m "Added Cucumber HTML report"
+        git push origin gh-pages
 
       # Step 4: Run tests (npm example)
       - name: Run tests

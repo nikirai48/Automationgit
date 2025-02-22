@@ -29,11 +29,12 @@
 // cypress/support/commands.js
 
 Cypress.Commands.add("Credentials", () => {
-  const username = Cypress.env("username");
-  const password = Cypress.env("password");
+  const username = Cypress.env("USERNAME"); // Passed from GitHub Actions
+  const password = Cypress.env("PASSWORD"); // Passed from GitHub Actions
+  const appURL = Cypress.env("APPLICATION_URL"); 
 
   
-  cy.visit("https://prgloo-dev-admin-01.azurewebsites.net/login/");
+  cy.visit(appURL);
   cy.get("#username").type(username);
   cy.get("#password").type(password);
   cy.get("#btn-submit").click();
@@ -48,4 +49,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   
   // If you want to suppress all uncaught exceptions, return false unconditionally
   return false;
+});
+
+Cypress.Commands.add('ContactsTab', () => {
+  return cy.get('li#module-influencer')
 });

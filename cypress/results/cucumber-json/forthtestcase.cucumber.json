@@ -23,7 +23,7 @@
             "name": "Click on Statements sub tab",
             "result": {
               "status": "passed",
-              "duration": 13405000000
+              "duration": 8430000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "Click on Filters and Select protected",
             "result": {
               "status": "passed",
-              "duration": 2178000000
+              "duration": 1386000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "Click on Protected statement to select",
             "result": {
               "status": "passed",
-              "duration": 301000000
+              "duration": 136000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "Click on back button to close filters",
             "result": {
               "status": "passed",
-              "duration": 331000000
+              "duration": 110000000
             }
           },
           {
@@ -62,8 +62,9 @@
             "line": 10,
             "name": "Click on the checkbox to select the statement",
             "result": {
-              "status": "passed",
-              "duration": 756000000
+              "status": "failed",
+              "duration": 8083000000,
+              "error_message": "CypressError: Timed out retrying after 7050ms: `cy.click()` failed because this element:\n\n`<input type=\"checkbox\" ng-model=\"value\" ng-click=\"onSelect(!value);$event.stopPropagation();\" class=\"ng-pristine ng-untouched ng-valid ng-empty\">`\n\nis being covered by another element:\n\n`<li class=\"submenu__item\" ng-repeat=\"state in moduleStates\" id=\"section-app.activities\" ui-sref=\"app.activities\" ui-sref-opts=\"{reload: true}\" ng-if=\"!(state.data.isHidden &amp;&amp; state.data.isHidden())\" href=\"#!/activities\">...</li>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:112915:68)\n    at ensureDescendents (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:112966:5)\n    at ensureDescendentsAndScroll (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:112972:14)\n    at ensureElIsNotCovered (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113103:5)\n    at runAllChecks (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113302:52)\n    at retryActionability (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:113339:16)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise.attempt.Promise.try (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:4338:29)\n    at whenStable (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:143744:68)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:143685:14)\n    at tryCatcher (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1724:18)\n    at Promise._fulfill (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:1668:18)\n    at <unknown> (https://prgloo-dev-admin-01.azurewebsites.net/__cypress/runner/cypress_runner.js:5473:46)\nFrom Your Spec Code:\n    at tc4.lock (cypress/e2e/PageObject/testcase4.cy.js:22:7)\n    at Context.eval (cypress/e2e/Stepdefinitions/ProtectedStatement.cy.js:21:6)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
             }
           },
           {
@@ -72,8 +73,7 @@
             "line": 11,
             "name": "Verify that protected statement cannot be deleted or Archived",
             "result": {
-              "status": "passed",
-              "duration": 102000000
+              "status": "skipped"
             }
           }
         ]
